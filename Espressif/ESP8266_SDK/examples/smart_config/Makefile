@@ -64,11 +64,13 @@ LINKFLAGS_eagle.app.v6 = \
 	-lnet80211	\
 	-llwip	\
 	-lwpa	\
+	-lcrypto	\
 	-lmain	\
 	-ljson	\
 	-lssl	\
 	-lupgrade	\
 	-lsmartconfig \
+	-lairkiss\
 	$(DEP_LIBS_eagle.app.v6)					\
 	-Wl,--end-group
 

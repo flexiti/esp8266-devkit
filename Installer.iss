@@ -1,6 +1,6 @@
 ﻿;InnoSetupVersion=5.5.0
-#define DevKitVersion "2.0.8"
-#define DevKitSDKVersion "1.3.0"
+#define DevKitVersion "2.1.0"
+#define DevKitSDKVersion "1.5.2"
 #define DevKitAppName "Unofficial Development Kit for Espressif ESP8266"
 #define DevKitAppURL "http://www.programs74.ru"
 #define DevKitAppPublisher "Mikhail Grigorev"
@@ -11,7 +11,7 @@
 [Setup]
 AppName={#DevKitAppName}
 AppVerName={#DevKitAppName}
-AppCopyright=Copyright © 2014-2015 {#DevKitAppPublisher}
+AppCopyright=Copyright © 2014-2016 {#DevKitAppPublisher}
 AppContact=sleuthhound@gmail.com
 AppPublisher={#DevKitAppPublisher}
 AppPublisherURL={#DevKitAppURL}
@@ -36,10 +36,13 @@ LicenseFile=license.txt
 
 [Files]
 Source: "Espressif\xtensa-lx106-elf\*"; DestDir: "{app}\xtensa-lx106-elf"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: compiler
-Source: "Espressif\docs\*"; DestDir: "{app}\docs"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: docs
-Source: "Espressif\utils\*"; DestDir: "{app}\utils"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: utils
-Source: "Espressif\examples\*"; DestDir: "{app}\examples"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: examples
+Source: "Espressif\docs\ESP8266\*"; DestDir: "{app}\docs\ESP8266"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: docs
+Source: "Espressif\utils\ESP8266\*"; DestDir: "{app}\utils\ESP8266"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: utils
+Source: "Espressif\utils\Terminal.exe"; DestDir: "{app}\utils"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: utils
+Source: "Espressif\utils\esp-reboot.tsc"; DestDir: "{app}\utils"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: utils
+Source: "Espressif\examples\ESP8266\*"; DestDir: "{app}\examples\ESP8266"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: examples
 Source: "Espressif\extra\*"; DestDir: "{app}\extra"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: sdk
+Source: "Espressif\ESP8266_MESH_SDK\*"; DestDir: "{app}\ESP8266_MESH_SDK"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: sdk
 Source: "Espressif\ESP8266_RTOS_SDK\*"; DestDir: "{app}\ESP8266_RTOS_SDK"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: sdk
 Source: "Espressif\ESP8266_SDK\*"; DestDir: "{app}\ESP8266_SDK"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: sdk
 Source: "Espressif\ESP8266_SDK_094\*"; DestDir: "{app}\ESP8266_SDK_094"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: sdk
@@ -47,6 +50,10 @@ Source: "Espressif\ESP8266_SDK_095\*"; DestDir: "{app}\ESP8266_SDK_095"; Flags: 
 Source: "Espressif\ESP8266_SDK_101\*"; DestDir: "{app}\ESP8266_SDK_101"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: sdk
 Source: "Espressif\ESP8266_SDK_110\*"; DestDir: "{app}\ESP8266_SDK_110"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: sdk
 Source: "Espressif\ESP8266_SDK_120\*"; DestDir: "{app}\ESP8266_SDK_120"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: sdk
+Source: "Espressif\ESP8266_SDK_130\*"; DestDir: "{app}\ESP8266_SDK_130"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: sdk
+Source: "Espressif\ESP8266_SDK_141\*"; DestDir: "{app}\ESP8266_SDK_141"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: sdk
+Source: "Espressif\ESP8266_SDK_150\*"; DestDir: "{app}\ESP8266_SDK_150"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: sdk
+Source: "Espressif\ESP8266_SDK_151\*"; DestDir: "{app}\ESP8266_SDK_151"; Flags: ignoreversion createallsubdirs recursesubdirs; Components: sdk
 Source: "Espressif\Espressif web site.url"; DestDir: "{app}"; Flags: ignoreversion
 Source: "Espressif\DevKit web site.url"; DestDir: "{app}"; Flags: ignoreversion
 Source: "Espressif\Command line Unofficial Development Kit for Espressif ESP8266.lnk"; DestDir: "{app}"; Flags: ignoreversion; Languages: english turkish; Components: utils
@@ -62,10 +69,11 @@ Source: "InnoCallback.dll"; DestDir: "{tmp}"; Flags: dontcopy
 
 [Dirs]
 Name: "{app}\xtensa-lx106-elf"; Components: compiler
-Name: "{app}\docs"; Components: docs
-Name: "{app}\utils"; Components: utils
-Name: "{app}\examples"; Components: examples
+Name: "{app}\docs\ESP8266"; Components: docs
+Name: "{app}\utils\ESP8266"; Components: utils
+Name: "{app}\examples\ESP8266"; Components: examples
 Name: "{app}\extra"; Components: sdk
+Name: "{app}\ESP8266_MESH_SDK"; Components: sdk
 Name: "{app}\ESP8266_RTOS_SDK"; Components: sdk
 Name: "{app}\ESP8266_SDK"; Components: sdk
 Name: "{app}\ESP8266_SDK_094"; Components: sdk
@@ -73,6 +81,10 @@ Name: "{app}\ESP8266_SDK_095"; Components: sdk
 Name: "{app}\ESP8266_SDK_101"; Components: sdk
 Name: "{app}\ESP8266_SDK_110"; Components: sdk
 Name: "{app}\ESP8266_SDK_120"; Components: sdk
+Name: "{app}\ESP8266_SDK_130"; Components: sdk
+Name: "{app}\ESP8266_SDK_141"; Components: sdk
+Name: "{app}\ESP8266_SDK_150"; Components: sdk
+Name: "{app}\ESP8266_SDK_151"; Components: sdk
 
 [Registry]
 Root: "HKCU"; Subkey: "Software\Terminal\TmacroForm"; ValueType: string; ValueName: "macro1E_Text"; ValueData: "%SCRS""C:\Espressif\utils\esp-reboot.tsc"""
@@ -102,10 +114,11 @@ Name: "{group}\{cm:UninstallProgram,{#DevKitAppName}}"; Filename: "{uninstallexe
 
 [UninstallDelete]
 Type: filesandordirs; Name: "{app}\xtensa-lx106-elf\*"; Components: compiler
-Type: filesandordirs; Name: "{app}\docs\*"; Components: docs
-Type: filesandordirs; Name: "{app}\utils\*"; Components: utils
-Type: filesandordirs; Name: "{app}\examples\*"; Components: examples
+Type: filesandordirs; Name: "{app}\docs\ESP8266\*"; Components: docs
+Type: filesandordirs; Name: "{app}\utils\ESP8266\*"; Components: utils
+Type: filesandordirs; Name: "{app}\examples\ESP8266\*"; Components: examples
 Type: filesandordirs; Name: "{app}\extra\*"; Components: sdk
+Type: filesandordirs; Name: "{app}\ESP8266_MESH_SDK\*"; Components: sdk
 Type: filesandordirs; Name: "{app}\ESP8266_RTOS_SDK\*"; Components: sdk
 Type: filesandordirs; Name: "{app}\ESP8266_SDK\*"; Components: sdk
 Type: filesandordirs; Name: "{app}\ESP8266_SDK_094\*"; Components: sdk
@@ -113,6 +126,10 @@ Type: filesandordirs; Name: "{app}\ESP8266_SDK_095\*"; Components: sdk
 Type: filesandordirs; Name: "{app}\ESP8266_SDK_101\*"; Components: sdk
 Type: filesandordirs; Name: "{app}\ESP8266_SDK_110\*"; Components: sdk
 Type: filesandordirs; Name: "{app}\ESP8266_SDK_120\*"; Components: sdk
+Type: filesandordirs; Name: "{app}\ESP8266_SDK_130\*"; Components: sdk
+Type: filesandordirs; Name: "{app}\ESP8266_SDK_141\*"; Components: sdk
+Type: filesandordirs; Name: "{app}\ESP8266_SDK_150\*"; Components: sdk
+Type: filesandordirs; Name: "{app}\ESP8266_SDK_151\*"; Components: sdk
 Type: files; Name: "{app}\Command line Unofficial Development Kit for Espressif ESP8266.lnk"; Languages: english turkish; Components: utils
 Type: files; Name: "{app}\Командная строка Unofficial Development Kit for Espressif ESP8266.lnk"; Languages: russian; Components: utils
 Type: files; Name: "{app}\DevKit web site.url"
@@ -355,5 +372,49 @@ begin
       DonatePanel.Free;
       DonatePanel:=nil;
     end;
+  end;
+end;
+
+function GetUninstallString: string;
+var
+  sUnInstPath: String;
+  sUnInstallString: String;
+begin
+  Result := '';
+  sUnInstPath := ExpandConstant('Software\Microsoft\Windows\CurrentVersion\Uninstall\{#DevKitAppName}_is1');
+  sUnInstallString := '';
+  if not RegQueryStringValue(HKLM, sUnInstPath, 'UninstallString', sUnInstallString) then
+    RegQueryStringValue(HKCU, sUnInstPath, 'UninstallString', sUnInstallString);
+  Result := sUnInstallString;
+end;
+
+function IsUpgrade: Boolean;
+begin
+  Result := (GetUninstallString() <> '');
+end;
+
+function InitializeSetup: Boolean;
+var
+  V: Integer;
+  iResultCode: Integer;
+  sUnInstallString: string;
+begin
+  Result := True;
+  if RegValueExists(HKEY_LOCAL_MACHINE,'Software\Microsoft\Windows\CurrentVersion\Uninstall\{#DevKitAppName}_is1', 'UninstallString') then
+  begin
+    if ActiveLanguage = 'russian' then 
+      V := MsgBox(ExpandConstant('Была найдена более старая версия {#DevKitAppName}. Для продолжения установки старую версию необходимо удалить. Согласны?'), mbInformation, MB_YESNO)
+    else
+      V := MsgBox(ExpandConstant('An old version of {#DevKitAppName} was detected. Do you want to uninstall it?'), mbInformation, MB_YESNO);
+    if V = IDYES then
+    begin
+      sUnInstallString := GetUninstallString();
+      sUnInstallString :=  RemoveQuotes(sUnInstallString);
+      Exec(ExpandConstant(sUnInstallString), '', '', SW_SHOW, ewWaitUntilTerminated, iResultCode);
+      Result := True; // Продолжение установки новой версии после удаления старой
+      //Exit; // Выход из установки новой версии после удаления старой
+    end
+    else
+      Result := False; // Если старая версия не удалена, то выход из инсталлятора
   end;
 end;
